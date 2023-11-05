@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const sign = process.env.JWT_SERCRET;
+const sign = "testtest";//process.env.JWT_SERCRET;
 
 function generate (data) {
     return jwt.sign(data, sign, {expiresIn: '30d'})
