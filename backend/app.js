@@ -1,5 +1,6 @@
 
 require('dotenv').config()
+DB_CONNECTION_STRING = "mongodb+srv://atimkam:pBJy176617WzGBhA@cluster0.h8jvexi.mongodb.net/blog?retryWrites=true&w=majority"
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -125,7 +126,7 @@ app.delete('/users/:id', hasRole([ROLES.ADMIN]), async (req, res) => {
     res.send({errror:null})
 })
 
-mongoose.connect(process.env.DB_CONNECTION_STRING)
+mongoose.connect(DB_CONNECTION_STRING)
     .then(() => {
         app.listen(port, () => {
             console.log(`Server has been starded on port ${port}`);
